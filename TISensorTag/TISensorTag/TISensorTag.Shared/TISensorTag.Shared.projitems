@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>a3e1f289-8a85-4a94-afda-56063439fc6f</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TISensorTag</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)AccelerometerService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)DeviceInfoViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GattDeviceInfoService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GattNotifyService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GattService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HumidityService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IRTemperatureService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SensorTagServiceIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueReadHelper.cs" />
+  </ItemGroup>
+</Project>

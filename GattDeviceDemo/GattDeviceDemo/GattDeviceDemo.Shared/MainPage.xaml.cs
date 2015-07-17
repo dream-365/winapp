@@ -35,7 +35,7 @@ namespace GattDeviceDemo
 
             await device.ConnectToServcie();
 
-            deviceName.Text = device.DeviceManufacturer;
+            // deviceName.Text = device.DeviceManufacturer;
         }
     }
 }
