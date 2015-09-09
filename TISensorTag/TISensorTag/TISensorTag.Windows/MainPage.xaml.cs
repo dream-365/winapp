@@ -98,6 +98,10 @@ namespace TISensorTag
 
             await service.InitAsync();
 
+            var value = await service.ReadValueAsync();
+
+            Debug.WriteLine("temp: {0}", value);
+
             await service.EnableSensorAsync();
 
             await service.EnableNotificationAsync();

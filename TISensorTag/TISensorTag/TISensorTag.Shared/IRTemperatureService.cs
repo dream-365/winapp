@@ -28,6 +28,25 @@ namespace TISensorTag
 
         }
 
+        public async Task<double> ReadValueAsync()
+        {
+            var characteristic = _service.GetCharacteristics(new Guid(SensorTagIds.UUID_IRT_DATA)).FirstOrDefault();
+
+            var result = await characteristic.ReadValueAsync(Windows.Devices.Bluetooth.BluetoothCacheMode.Uncached);
+
+            if (result.Status == GattCommunicationStatus.Unreachable)
+            {
+                throw new Exception("serivce is unreachable");
+            }
+
+            var data = result.Value.ToArray();
+
+            Debug.WriteLine("data: {0}-{1}-{2}-{3}", data[0], data[1], data[2], data[3]);
+
+            return CalculateAmbientTemperature(result.Value.ToArray(), TemperatureScale.Celsius);
+        }
+
+
         protected override void OnValueChange(byte[] data)
         {
             var ambientTemperature = CalculateAmbientTemperature(data, TemperatureScale.Celsius);

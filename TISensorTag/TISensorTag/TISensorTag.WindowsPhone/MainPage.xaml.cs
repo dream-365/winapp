@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,6 +23,8 @@ namespace TISensorTag
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private IRTemperatureService temperatureService;
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -49,13 +52,20 @@ namespace TISensorTag
         {
             connectButton.IsEnabled = false;
 
-            var service = new IRTemperatureService();
+            temperatureService = new IRTemperatureService();
 
-            await service.InitAsync();
+            await temperatureService.InitAsync();
 
-            await service.EnableSensorAsync();
+            await temperatureService.EnableSensorAsync();
 
-            await service.EnableNotificationAsync();
+            Debug.WriteLine("Initialization finished");
+        }
+
+        private async void readValueButton_Click(object sender, RoutedEventArgs e)
+        {
+            var value = await temperatureService.ReadValueAsync();
+
+            Debug.WriteLine("TEMP: {0}", value);
         }
     }
 }

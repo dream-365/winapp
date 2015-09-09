@@ -11,6 +11,7 @@
     <Grid>
         <StackPanel Margin="20">
             <Button Name="connectButton" Click="connectButton_Click">Connect to Sensor Tag</Button>
+            <Button Name="readValueButton" Click="readValueButton_Click">Read Value</Button>
         </StackPanel>
     </Grid>
 </Page>
