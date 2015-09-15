@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -16,7 +18,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
+// The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
 namespace TISensorTag
 {
@@ -25,9 +27,7 @@ namespace TISensorTag
     /// </summary>
     public sealed partial class App : Application
     {
-#if WINDOWS_PHONE_APP
         private TransitionCollection transitions;
-#endif
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -66,6 +66,9 @@ namespace TISensorTag
                 // TODO: change this value to a cache size that is appropriate for your application
                 rootFrame.CacheSize = 1;
 
+                // Set the default language
+                rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
+
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     // TODO: Load state from previously suspended application
@@ -77,7 +80,6 @@ namespace TISensorTag
 
             if (rootFrame.Content == null)
             {
-#if WINDOWS_PHONE_APP
                 // Removes the turnstile navigation for startup.
                 if (rootFrame.ContentTransitions != null)
                 {
@@ -90,7 +92,6 @@ namespace TISensorTag
 
                 rootFrame.ContentTransitions = null;
                 rootFrame.Navigated += this.RootFrame_FirstNavigated;
-#endif
 
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
@@ -105,7 +106,6 @@ namespace TISensorTag
             Window.Current.Activate();
         }
 
-#if WINDOWS_PHONE_APP
         /// <summary>
         /// Restores the content transitions after the app has launched.
         /// </summary>
@@ -117,7 +117,6 @@ namespace TISensorTag
             rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection() { new NavigationThemeTransition() };
             rootFrame.Navigated -= this.RootFrame_FirstNavigated;
         }
-#endif
 
         /// <summary>
         /// Invoked when application execution is being suspended.  Application state is saved
@@ -129,6 +128,14 @@ namespace TISensorTag
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
+
+
+
+            var task = new Task(()=> {
+                // work1
+            }).ContinueWith((t)=> {
+                // work2
+            });
 
             // TODO: Save application state and stop any background activity
             deferral.Complete();

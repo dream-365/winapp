@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TISensorTag", "TISensorTag", "{107A1641-5531-4FE8-996C-BD8C7164E72E}"
 EndProject
@@ -11,10 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TISensorTag.Windows", "TISe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TISensorTag.WindowsPhone", "TISensorTag\TISensorTag.WindowsPhone\TISensorTag.WindowsPhone.csproj", "{744CCC2B-5B60-4103-8199-89E9D657C39E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TISensorTag.UWP", "TISensorTag.UWP\TISensorTag.UWP.csproj", "{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		TISensorTag\TISensorTag.Shared\TISensorTag.Shared.projitems*{744ccc2b-5b60-4103-8199-89e9d657c39e}*SharedItemsImports = 4
 		TISensorTag\TISensorTag.Shared\TISensorTag.Shared.projitems*{66fc1d8e-1a30-49f7-975a-32ab7d888ee1}*SharedItemsImports = 4
+		TISensorTag\TISensorTag.Shared\TISensorTag.Shared.projitems*{fb1d034c-f7b6-4570-a7fe-7dfd28569a1c}*SharedItemsImports = 4
 		TISensorTag\TISensorTag.Shared\TISensorTag.Shared.projitems*{a3e1f289-8a85-4a94-afda-56063439fc6f}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,6 +75,26 @@ Global
 		{744CCC2B-5B60-4103-8199-89E9D657C39E}.Release|x86.ActiveCfg = Release|x86
 		{744CCC2B-5B60-4103-8199-89E9D657C39E}.Release|x86.Build.0 = Release|x86
 		{744CCC2B-5B60-4103-8199-89E9D657C39E}.Release|x86.Deploy.0 = Release|x86
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Debug|ARM.ActiveCfg = Debug|ARM
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Debug|ARM.Build.0 = Debug|ARM
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Debug|ARM.Deploy.0 = Debug|ARM
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Debug|x64.ActiveCfg = Debug|x64
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Debug|x64.Build.0 = Debug|x64
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Debug|x64.Deploy.0 = Debug|x64
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Debug|x86.ActiveCfg = Debug|x86
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Debug|x86.Build.0 = Debug|x86
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Debug|x86.Deploy.0 = Debug|x86
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Release|Any CPU.ActiveCfg = Release|x86
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Release|ARM.ActiveCfg = Release|ARM
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Release|ARM.Build.0 = Release|ARM
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Release|ARM.Deploy.0 = Release|ARM
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Release|x64.ActiveCfg = Release|x64
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Release|x64.Build.0 = Release|x64
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Release|x64.Deploy.0 = Release|x64
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Release|x86.ActiveCfg = Release|x86
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Release|x86.Build.0 = Release|x86
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +103,6 @@ Global
 		{A3E1F289-8A85-4A94-AFDA-56063439FC6F} = {107A1641-5531-4FE8-996C-BD8C7164E72E}
 		{66FC1D8E-1A30-49F7-975A-32AB7D888EE1} = {107A1641-5531-4FE8-996C-BD8C7164E72E}
 		{744CCC2B-5B60-4103-8199-89E9D657C39E} = {107A1641-5531-4FE8-996C-BD8C7164E72E}
+		{FB1D034C-F7B6-4570-A7FE-7DFD28569A1C} = {107A1641-5531-4FE8-996C-BD8C7164E72E}
 	EndGlobalSection
 EndGlobal

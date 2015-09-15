@@ -9,13 +9,7 @@
     <Import_RootNamespace>TISensorTag</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
     <Compile Include="$(MSBuildThisFileDirectory)AccelerometerService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)DeviceInfoViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GattDeviceInfoService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GattNotifyService.cs" />
